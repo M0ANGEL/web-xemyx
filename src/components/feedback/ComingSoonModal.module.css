@@ -1,0 +1,111 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: var(--space-6);
+  background: color-mix(in srgb, var(--color-black) 48%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.dialog {
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 28rem);
+  padding: var(--space-12) var(--space-8) var(--space-8);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.orb {
+  position: absolute;
+  top: -3rem;
+  right: -2.5rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-primary) 14%, transparent);
+  pointer-events: none;
+}
+
+.close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.close:hover {
+  border-color: var(--color-text);
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.content {
+  display: grid;
+  justify-items: start;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--space-5);
+  border-radius: 0.9rem;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.product {
+  margin-top: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.text {
+  margin-top: var(--space-3);
+  max-width: 22rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.action {
+  margin-top: var(--space-8);
+}

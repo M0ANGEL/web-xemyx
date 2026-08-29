@@ -1,7 +1,6 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
   color: inherit;
   text-decoration: none;
 }
@@ -10,6 +9,8 @@
   display: block;
   height: 2.75rem;
   width: auto;
+  background: transparent;
+  border: 0;
 }
 
 .logo:focus-visible {

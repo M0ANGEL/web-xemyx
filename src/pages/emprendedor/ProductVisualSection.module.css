@@ -1,0 +1,4 @@
+.stage {
+  margin-top: var(--space-10);
+  min-width: 0;
+}

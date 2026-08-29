@@ -7,8 +7,23 @@
     <meta name="theme-color" content="#4618FE" />
     <meta
       name="description"
-      content="Zemyx crea productos digitales para la vida y los negocios: Mensajería, Gastos, Menú y Emprendedor."
+      content="Zemyx crea productos digitales para la vida y los negocios: Mensajería, Finanzas Personales, Menú y Emprendedor."
     />
+    <script>
+      (function () {
+        try {
+          var key = 'zemyx-theme';
+          var stored = localStorage.getItem(key);
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -39,17 +39,25 @@
   gap: var(--space-3);
 }
 
-.links a {
+.links a,
+.links button {
+  padding: 0;
+  border: 0;
+  background: none;
   font-size: var(--font-size-sm);
-  color: var(--color-black);
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
   transition: color var(--duration) var(--ease);
 }
 
-.links a:hover {
+.links a:hover,
+.links button:hover {
   color: var(--color-primary);
 }
 
-.links a:focus-visible {
+.links a:focus-visible,
+.links button:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }

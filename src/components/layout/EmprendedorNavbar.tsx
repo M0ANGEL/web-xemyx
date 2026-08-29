@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence as Presence, motion, useReducedMotion } from 'framer-motion';
 import { BrandLogo } from '../brand/BrandLogo';
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
 import { ThemeToggle } from '../ui/ThemeToggle';
+import { emprendedorTrial } from '../../data/emprendedor';
+import { getProductBySlug } from '../../data/products';
 import styles from './Navbar.module.css';
+import productStyles from './EmprendedorNavbar.module.css';
 
 const AnimatePresence = Presence as React.ComponentType<{
   children?: React.ReactNode;
@@ -13,24 +15,16 @@ const AnimatePresence = Presence as React.ComponentType<{
 }>;
 
 const links = [
-  { to: '/productos', label: 'Productos' },
-  { to: '/nosotros', label: 'Nosotros' },
-  { to: '/contacto', label: 'Contacto' },
+  { href: '#caracteristicas', label: 'Características' },
+  { href: '#como-funciona', label: 'Cómo funciona' },
+  { href: '#para-quien', label: 'Para quién es' },
 ];
 
-function navClass({ isActive }: { isActive: boolean }) {
-  return [styles.link, isActive ? styles.active : ''].filter(Boolean).join(' ');
-}
-
-export function Navbar() {
+export function EmprendedorNavbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { pathname } = useLocation();
   const reduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  const product = getProductBySlug('emprendedor');
 
   useEffect(() => {
     const onScroll = () => {
@@ -46,28 +40,37 @@ export function Navbar() {
     <header className={[styles.header, scrolled ? styles.scrolled : ''].filter(Boolean).join(' ')}>
       <Container>
         <div className={styles.bar}>
-          <BrandLogo />
+          <div className={productStyles.brand}>
+            <BrandLogo />
+            <span className={productStyles.divider} aria-hidden="true" />
+            <span className={productStyles.product}>{product?.name}</span>
+          </div>
 
-          <nav className={styles.desktopNav} aria-label="Principal">
+          <nav className={styles.desktopNav} aria-label="Emprendedor">
             {links.map((link) => (
-              <NavLink key={link.to} to={link.to} className={navClass}>
+              <a key={link.href} href={link.href} className={styles.link}>
                 {link.label}
-              </NavLink>
+              </a>
             ))}
           </nav>
 
           <div className={styles.end}>
             <ThemeToggle />
             <div className={styles.actions}>
-              <Button to="/productos" size="sm" withArrow>
-                Explorar productos
+              <Button
+                size="sm"
+                href={emprendedorTrial.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {emprendedorTrial.navLabel}
               </Button>
             </div>
             <button
               className={[styles.toggle, open ? styles.toggleOpen : ''].filter(Boolean).join(' ')}
               type="button"
               aria-expanded={open}
-              aria-controls="menu-movil"
+              aria-controls="menu-emprendedor"
               aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
               onClick={() => setOpen((current) => !current)}
             >
@@ -79,7 +82,7 @@ export function Navbar() {
         <AnimatePresence initial={false}>
           {open ? (
             <motion.div
-              id="menu-movil"
+              id="menu-emprendedor"
               className={styles.mobilePanel}
               initial={reduceMotion ? false : { height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
@@ -88,17 +91,22 @@ export function Navbar() {
             >
               <nav className={styles.mobileNav} aria-label="Móvil">
                 {links.map((link) => (
-                  <NavLink
-                    key={link.to}
-                    to={link.to}
+                  <a
+                    key={link.href}
+                    href={link.href}
                     className={styles.mobileLink}
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
-                  </NavLink>
+                  </a>
                 ))}
-                <Button to="/productos" className={styles.mobileCta} withArrow>
-                  Explorar productos
+                <Button
+                  className={styles.mobileCta}
+                  href={emprendedorTrial.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {emprendedorTrial.navLabel}
                 </Button>
               </nav>
             </motion.div>

@@ -4,14 +4,20 @@
   --color-black: #000000;
   --color-light: #f2f2f2;
 
+  --color-bg: #f2f2f2;
+  --color-surface: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: color-mix(in srgb, #000 56%, transparent);
+  --color-border: color-mix(in srgb, #000 8%, transparent);
+  --color-border-strong: color-mix(in srgb, #000 14%, transparent);
   --color-primary-hover: color-mix(in srgb, var(--color-primary) 86%, #000);
   --color-primary-soft: color-mix(in srgb, var(--color-primary) 8%, #fff);
   --color-secondary-soft: color-mix(in srgb, var(--color-secondary) 8%, #fff);
-  --color-surface: #ffffff;
-  --color-text: var(--color-black);
-  --color-text-muted: color-mix(in srgb, var(--color-black) 56%, transparent);
-  --color-border: color-mix(in srgb, var(--color-black) 8%, transparent);
-  --color-border-strong: color-mix(in srgb, var(--color-black) 14%, transparent);
+  --color-ink: #000000;
+  --color-on-ink: #ffffff;
+  --color-inverse: #000000;
+  --color-on-inverse: #ffffff;
+  --color-logo-plate: #ffffff;
 
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-size-xs: 0.8125rem;
@@ -51,10 +57,31 @@
   --radius-lg: 1.25rem;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 1px 0 color-mix(in srgb, var(--color-black) 4%, transparent);
+  --shadow-soft: 0 1px 0 color-mix(in srgb, #000 4%, transparent);
   --max-width: 72rem;
   --nav-height: 4.5rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --duration: 180ms;
   --duration-slow: 320ms;
+  --color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --color-bg: #121214;
+  --color-light: #121214;
+  --color-surface: #1c1c21;
+  --color-text: #f2f2f2;
+  --color-text-muted: color-mix(in srgb, #f2f2f2 58%, transparent);
+  --color-border: color-mix(in srgb, #fff 10%, transparent);
+  --color-border-strong: color-mix(in srgb, #fff 16%, transparent);
+  --color-primary-hover: color-mix(in srgb, var(--color-primary) 82%, #fff);
+  --color-primary-soft: color-mix(in srgb, var(--color-primary) 22%, transparent);
+  --color-secondary-soft: color-mix(in srgb, var(--color-secondary) 18%, transparent);
+  --color-ink: #f2f2f2;
+  --color-on-ink: #121214;
+  --color-inverse: #0a0a0c;
+  --color-on-inverse: #f2f2f2;
+  --color-logo-plate: #ffffff;
+  --shadow-soft: 0 1px 0 color-mix(in srgb, #fff 6%, transparent);
+  --color-scheme: dark;
 }

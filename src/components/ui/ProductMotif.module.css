@@ -1,0 +1,147 @@
+.motif {
+  position: relative;
+  display: grid;
+  min-height: 5.5rem;
+  padding: var(--space-4);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-bg) 70%, var(--color-surface));
+}
+
+.mensajeria {
+  gap: var(--space-2);
+}
+
+.bubble {
+  width: fit-content;
+  max-width: 80%;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.7rem;
+  font-size: 0.7rem;
+  font-weight: var(--weight-semibold);
+}
+
+.in {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.out {
+  justify-self: end;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.route {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+}
+
+.route i {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-primary) 45%, transparent);
+}
+
+.finanzas {
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: var(--space-3);
+}
+
+.bars {
+  display: flex;
+  align-items: end;
+  gap: 0.35rem;
+  height: 3.4rem;
+}
+
+.bars i {
+  width: 0.55rem;
+  border-radius: 99px 99px 2px 2px;
+  background: color-mix(in srgb, var(--color-black) 12%, transparent);
+}
+
+.accentBar {
+  background: var(--color-secondary) !important;
+}
+
+.chip {
+  padding: 0.3rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-secondary-soft);
+  color: var(--color-secondary);
+  font-size: 0.7rem;
+  font-weight: var(--weight-semibold);
+}
+
+.menu {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.dish {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-ink);
+  box-shadow: inset 0 0 0 5px var(--color-light);
+  background: var(--color-surface);
+}
+
+.lines {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.lines i {
+  display: block;
+  height: 4px;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--color-black) 10%, transparent);
+}
+
+.lines i:first-child {
+  width: 88%;
+}
+
+.lines i:nth-child(2) {
+  width: 70%;
+}
+
+.lines i:last-child {
+  width: 46%;
+  background: color-mix(in srgb, var(--color-primary) 28%, transparent);
+}
+
+.emprendedor {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.tile {
+  display: grid;
+  gap: 0.1rem;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.tile strong {
+  font-size: 1rem;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-primary);
+}
+
+.tile small {
+  color: var(--color-text-muted);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}

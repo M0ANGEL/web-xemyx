@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BrandLogo } from '../brand/BrandLogo';
 import { Container } from '../ui/Container';
+import { useComingSoon } from '../../context/ComingSoonContext';
 import { products } from '../../data/products';
 import { site } from '../../data/site';
 import styles from './Footer.module.css';
@@ -13,6 +14,8 @@ const companyLinks = [
 ];
 
 export function Footer() {
+  const { openComingSoon } = useComingSoon();
+
   return (
     <footer className={styles.footer}>
       <Container>
@@ -38,7 +41,13 @@ export function Footer() {
             <ul className={styles.links}>
               {products.map((product) => (
                 <li key={product.slug}>
-                  <Link to={`/productos/${product.slug}`}>{product.name}</Link>
+                  {product.available ? (
+                    <Link to={`/productos/${product.slug}`}>{product.name}</Link>
+                  ) : (
+                    <button type="button" onClick={() => openComingSoon(product.name)}>
+                      {product.name}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>

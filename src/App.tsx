@@ -1,16 +1,24 @@
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from './app/routes';
+import { ComingSoonProvider } from './context/ComingSoonContext';
+import { WhatsAppButton } from './components/feedback/WhatsAppButton';
+import { ThemeProvider } from './theme/ThemeContext';
 
 function App() {
   return (
-    <BrowserRouter
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    >
-      <AppRoutes />
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
+        <ComingSoonProvider>
+          <AppRoutes />
+          <WhatsAppButton />
+        </ComingSoonProvider>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

@@ -52,7 +52,7 @@
   height: 0.55rem;
   bottom: 18%;
   right: 16%;
-  background: var(--color-black);
+  background: var(--color-ink);
 }
 
 .core {
@@ -131,8 +131,8 @@
 }
 
 .ink {
-  color: #fff;
-  background: var(--color-black);
+  color: var(--color-on-ink);
+  background: var(--color-ink);
 }
 
 .soft {

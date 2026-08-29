@@ -9,6 +9,7 @@ export type Product = {
   url: string;
   icon: ProductIconId;
   tone: ProductTone;
+  available: boolean;
 };
 
 export const products: Product[] = [
@@ -20,15 +21,17 @@ export const products: Product[] = [
     url: 'https://mensajeria.zemyx.com',
     icon: 'message',
     tone: 'primary',
+    available: false,
   },
   {
-    slug: 'gastos',
-    name: 'Gastos',
-    description: 'Organiza y entiende tus gastos personales.',
-    host: 'gastos.zemyx.com',
-    url: 'https://gastos.zemyx.com',
+    slug: 'finanzas',
+    name: 'Finanzas Personales',
+    description: 'Organiza y entiende tus finanzas personales.',
+    host: 'finanzas.zemyx.com',
+    url: 'https://finanzas.zemyx.com',
     icon: 'wallet',
     tone: 'accent',
+    available: false,
   },
   {
     slug: 'menu',
@@ -38,6 +41,7 @@ export const products: Product[] = [
     url: 'https://menu.zemyx.com',
     icon: 'menu',
     tone: 'ink',
+    available: false,
   },
   {
     slug: 'emprendedor',
@@ -47,6 +51,7 @@ export const products: Product[] = [
     url: 'https://emprendedor.zemyx.com',
     icon: 'store',
     tone: 'soft',
+    available: true,
   },
 ];
 
