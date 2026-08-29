@@ -1,0 +1,11 @@
+.section {
+  padding-block: var(--space-section);
+}
+
+.muted {
+  background: color-mix(in srgb, var(--color-black) 3%, var(--color-light));
+}
+
+.surface {
+  background: var(--color-surface);
+}

@@ -1,0 +1,32 @@
+.cta {
+  padding-block: var(--space-section);
+  background: var(--color-black);
+  color: #fff;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-primary) 55%, #fff);
+}
+
+.title {
+  max-width: 10ch;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 0.98;
+}
+
+.text {
+  max-width: 28rem;
+  margin-top: var(--space-6);
+  color: color-mix(in srgb, #fff 68%, transparent);
+}
+
+.action {
+  margin-top: var(--space-8);
+}

@@ -1,0 +1,23 @@
+.eyebrow {
+  margin-bottom: var(--space-5);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.quote {
+  max-width: 16ch;
+  margin: 0;
+  font-size: clamp(2.4rem, 7vw, 4.75rem);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.02;
+}
+
+.note {
+  max-width: 28rem;
+  margin-top: var(--space-8);
+  color: var(--color-text-muted);
+}

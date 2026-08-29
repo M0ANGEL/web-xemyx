@@ -1,0 +1,85 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3rem, 8vw, 6.5rem) clamp(4rem, 10vw, 7.5rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.copy {
+  display: grid;
+  gap: var(--space-6);
+  max-width: 38rem;
+}
+
+.eyebrow {
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: var(--font-size-display);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 0.98;
+}
+
+.subtitle {
+  max-width: 32rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chips li {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-medium);
+}
+
+.visual {
+  min-height: 18rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: var(--space-16);
+  }
+
+  .title {
+    max-width: 11ch;
+  }
+}
+
+@media (max-width: 479px) {
+  .actions {
+    display: grid;
+  }
+
+  .actions a {
+    width: 100%;
+  }
+}

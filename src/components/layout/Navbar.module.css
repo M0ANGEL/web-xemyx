@@ -1,0 +1,176 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  min-height: var(--nav-height);
+  background: color-mix(in srgb, var(--color-light) 72%, transparent);
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(8px);
+  transition:
+    background-color var(--duration-slow) var(--ease),
+    border-color var(--duration-slow) var(--ease),
+    box-shadow var(--duration-slow) var(--ease),
+    backdrop-filter var(--duration-slow) var(--ease);
+}
+
+.scrolled {
+  background: color-mix(in srgb, var(--color-light) 92%, transparent);
+  border-bottom-color: var(--color-border);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-black) 4%, transparent);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  gap: var(--space-6);
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.link {
+  position: relative;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  transition: color var(--duration) var(--ease);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: var(--space-3);
+  right: var(--space-3);
+  bottom: 0.2rem;
+  height: 1px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration) var(--ease);
+}
+
+.link:hover,
+.active {
+  color: var(--color-black);
+}
+
+.link:hover::after,
+.active::after {
+  transform: scaleX(1);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.actions {
+  display: none;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.toggle span,
+.toggle span::before,
+.toggle span::after {
+  display: block;
+  width: 1rem;
+  height: 1.5px;
+  background: var(--color-black);
+  transition: transform var(--duration) var(--ease), opacity var(--duration) var(--ease);
+}
+
+.toggle span {
+  position: relative;
+}
+
+.toggle span::before,
+.toggle span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.toggle span::before {
+  top: -5px;
+}
+
+.toggle span::after {
+  top: 5px;
+}
+
+.toggleOpen span {
+  background: transparent;
+}
+
+.toggleOpen span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.toggleOpen span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.mobilePanel {
+  overflow: hidden;
+}
+
+.mobileNav {
+  display: grid;
+  gap: var(--space-2);
+  padding-bottom: var(--space-6);
+}
+
+.mobileLink {
+  display: block;
+  padding: var(--space-3) 0;
+  font-weight: var(--weight-medium);
+}
+
+.mobileLink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.mobileCta {
+  margin-top: var(--space-3);
+  justify-self: start;
+}
+
+@media (min-width: 840px) {
+  .desktopNav,
+  .actions {
+    display: flex;
+  }
+
+  .toggle,
+  .mobilePanel {
+    display: none;
+  }
+}
