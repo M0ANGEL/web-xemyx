@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Zemyx</title>
+    <script>
+      sessionStorage.setItem(
+        'zemyx-redirect',
+        location.pathname + location.search + location.hash
+      );
+      location.replace('/');
+    </script>
+  </head>
+  <body></body>
+</html>
