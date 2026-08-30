@@ -28,7 +28,9 @@ function knockOutWhite(source: string) {
           const red = data[index];
           const green = data[index + 1];
           const blue = data[index + 2];
-          if (red > 248 && green > 248 && blue > 248) {
+          const isWhite = red > 248 && green > 248 && blue > 248;
+          const isBlack = red < 18 && green < 18 && blue < 18;
+          if (isWhite || isBlack) {
             data[index + 3] = 0;
           }
         }
@@ -62,7 +64,8 @@ export function BrandLogo({ className }: BrandLogoProps) {
 
   return (
     <Link to="/" className={[styles.logo, className].filter(Boolean).join(' ')} aria-label={site.name}>
-      <img className={styles.mark} src={src} alt={site.name} />
+      <img className={styles.mark} src={src} alt="" />
+      <span className={styles.wordmark}>{site.name}</span>
     </Link>
   );
 }
