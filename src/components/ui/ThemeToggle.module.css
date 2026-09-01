@@ -8,7 +8,7 @@
   border: 0;
   border-radius: var(--radius-sm);
   background: transparent;
-  color: var(--color-chrome-text);
+  color: inherit;
   cursor: pointer;
   transition:
     background-color var(--duration) var(--ease),
@@ -16,6 +16,10 @@
 }
 
 .toggle:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+:global([data-theme='dark']) .toggle:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 

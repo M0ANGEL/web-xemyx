@@ -3,11 +3,14 @@
   top: 0;
   z-index: 20;
   min-height: var(--nav-height);
-  background: rgba(0, 0, 0, 0.52);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.38);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 1px 12px rgba(15, 23, 42, 0.04);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
   transition:
     background-color var(--duration-slow) var(--ease),
     border-color var(--duration-slow) var(--ease),
@@ -16,14 +19,17 @@
 }
 
 .scrolled {
-  background: rgba(0, 0, 0, 0.68);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  background: rgba(255, 255, 255, 0.52);
+  border-bottom-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.65) inset,
+    0 8px 28px rgba(15, 23, 42, 0.07);
+  backdrop-filter: blur(36px) saturate(210%);
+  -webkit-backdrop-filter: blur(36px) saturate(210%);
 }
 
 :global([data-theme='dark']) .header {
+  color: var(--color-chrome-text);
   background: rgba(255, 255, 255, 0.04);
   border-bottom-color: rgba(255, 255, 255, 0.06);
   box-shadow: none;
@@ -46,7 +52,7 @@
 }
 
 .brand {
-  color: var(--color-chrome-text);
+  color: inherit;
 }
 
 .desktopNav {
@@ -61,8 +67,12 @@
   border-radius: var(--radius-sm);
   font-size: var(--font-size-sm);
   font-weight: var(--weight-medium);
-  color: var(--color-chrome-text-muted);
+  color: var(--color-text-muted);
   transition: color var(--duration) var(--ease);
+}
+
+:global([data-theme='dark']) .link {
+  color: var(--color-chrome-text-muted);
 }
 
 .link::after {
@@ -121,6 +131,10 @@
 }
 
 .toggle:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+:global([data-theme='dark']) .toggle:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -135,7 +149,7 @@
   display: block;
   width: 1rem;
   height: 1.5px;
-  background: var(--color-chrome-text);
+  background: currentColor;
   transition: transform var(--duration) var(--ease), opacity var(--duration) var(--ease);
 }
 
@@ -175,7 +189,7 @@
 .mobilePanel {
   overflow: hidden;
   background: transparent;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 :global([data-theme='dark']) .mobilePanel {
@@ -192,6 +206,10 @@
   display: block;
   padding: var(--space-3) 0;
   font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+}
+
+:global([data-theme='dark']) .mobileLink {
   color: var(--color-chrome-text-muted);
 }
 
@@ -224,10 +242,18 @@
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .header {
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(255, 255, 255, 0.9);
   }
 
   .scrolled {
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  :global([data-theme='dark']) .header {
+    background: rgba(0, 0, 0, 0.92);
+  }
+
+  :global([data-theme='dark']) .scrolled {
     background: var(--color-chrome-bg);
   }
 }
