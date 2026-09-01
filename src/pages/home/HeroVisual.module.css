@@ -7,7 +7,7 @@
 .ring {
   position: absolute;
   inset: 8% 10%;
-  border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 12%, transparent);
   border-radius: 2rem;
 }
 
@@ -20,8 +20,8 @@
   background: linear-gradient(
     90deg,
     transparent,
-    color-mix(in srgb, var(--color-primary) 45%, transparent),
-    color-mix(in srgb, var(--color-secondary) 40%, transparent),
+    color-mix(in srgb, var(--color-primary) 28%, transparent),
+    color-mix(in srgb, var(--color-secondary) 24%, transparent),
     transparent
   );
 }
@@ -36,7 +36,7 @@
   height: 11rem;
   top: 12%;
   right: 8%;
-  background: color-mix(in srgb, var(--color-primary) 16%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
 .orbAccent {
@@ -64,7 +64,7 @@
   place-items: center;
   width: 7.5rem;
   height: 7.5rem;
-  border: 1px solid color-mix(in srgb, var(--color-primary) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
   border-radius: 50%;
   background: var(--color-surface);
   transform: translate(-50%, -50%);

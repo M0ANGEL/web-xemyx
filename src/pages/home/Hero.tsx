@@ -9,7 +9,7 @@ export function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className={styles.hero} aria-labelledby="hero-title">
+    <section className={styles.hero} id="inicio" aria-labelledby="hero-title">
       <Container>
         <div className={styles.grid}>
           <div className={styles.copy}>
@@ -49,10 +49,10 @@ export function Hero() {
               animate="show"
               transition={fadeUpTransition(0.24)}
             >
-              <Button to="/productos" size="lg" withArrow>
+              <Button href="#productos" size="lg" withArrow>
                 Explorar productos
               </Button>
-              <Button to="/nosotros" variant="outline" size="lg">
+              <Button href="#nosotros" variant="outline" size="lg">
                 Conocer Zemyx
               </Button>
             </motion.div>

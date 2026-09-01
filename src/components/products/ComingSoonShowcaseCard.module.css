@@ -1,0 +1,117 @@
+.wrap {
+  min-width: 0;
+}
+
+.card {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-card);
+  box-shadow: var(--shadow-soft);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.92;
+  transition:
+    transform var(--duration-slow) var(--ease),
+    border-color var(--duration-slow) var(--ease),
+    opacity var(--duration) var(--ease);
+}
+
+.card:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: var(--color-border-strong);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.previewFrame {
+  display: grid;
+  place-items: center;
+  min-height: 8.5rem;
+  padding: var(--space-6) var(--space-4);
+  background: color-mix(in srgb, var(--color-surface) 80%, var(--color-bg));
+  border-bottom: 1px solid var(--color-border);
+  opacity: 0.88;
+}
+
+.meta {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--color-black) 4%, transparent);
+  color: var(--color-text-muted);
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.soon {
+  padding: 0.28rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.68rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: color-mix(in srgb, var(--color-black) 4%, transparent);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}
+
+.host {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.accent .iconWrap {
+  color: var(--color-secondary);
+  background: var(--color-secondary-soft);
+}
+
+.ink .iconWrap {
+  background: color-mix(in srgb, var(--color-ink) 8%, transparent);
+  color: var(--color-text);
+}
+
+@media (max-width: 479px) {
+  .meta {
+    padding: var(--space-4) var(--space-5);
+  }
+}

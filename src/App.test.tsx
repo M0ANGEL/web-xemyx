@@ -3,6 +3,15 @@ import userEvent from '@testing-library/user-event';
 import App from './App';
 import { site } from './data/site';
 
+test('renders products showcase sections on home', () => {
+  window.history.pushState({}, '', '/');
+  render(<App />);
+
+  expect(screen.getByRole('heading', { name: /productos reales/i })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /^disponibles$/i })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /^próximos$/i })).toBeInTheDocument();
+});
+
 test('renders the Zemyx home experience', () => {
   window.history.pushState({}, '', '/');
   render(<App />);
@@ -11,24 +20,28 @@ test('renders the Zemyx home experience', () => {
     screen.getByRole('heading', { name: /software que se adapta a tu mundo/i })
   ).toBeInTheDocument();
   expect(screen.getAllByText('Emprendedor').length).toBeGreaterThan(0);
+  expect(screen.getAllByText('Envíos').length).toBeGreaterThan(0);
   expect(screen.getAllByText('Finanzas Personales').length).toBeGreaterThan(0);
   expect(screen.queryByText(/^Gastos$/)).not.toBeInTheDocument();
+  expect(screen.queryByText(/^Mensajería$/)).not.toBeInTheDocument();
   expect(screen.queryByText(/moar/i)).not.toBeInTheDocument();
   expect(screen.getByRole('link', { name: /hablar con zemyx/i })).toHaveAttribute(
     'href',
     'mailto:hola@zemyx.com'
   );
+  expect(screen.getByText(/creamos sistemas para cada problema/i)).toBeInTheDocument();
+  expect(screen.getByText(/¿tienes una idea\?/i)).toBeInTheDocument();
 });
 
 test('unavailable products open the coming soon dialog', async () => {
   window.history.pushState({}, '', '/');
   render(<App />);
 
-  await userEvent.click(screen.getAllByRole('button', { name: /mensajería/i })[0]);
+  await userEvent.click(screen.getAllByRole('button', { name: /finanzas personales/i })[0]);
 
   const dialog = screen.getByRole('dialog');
   expect(within(dialog).getByRole('heading', { name: /muy pronto/i })).toBeInTheDocument();
-  expect(within(dialog).getByText('Mensajería')).toBeInTheDocument();
+  expect(within(dialog).getByText('Finanzas Personales')).toBeInTheDocument();
 });
 
 test('finanzas personales and menu also open coming soon', async () => {
@@ -43,21 +56,17 @@ test('finanzas personales and menu also open coming soon', async () => {
   expect(screen.getByRole('heading', { name: /muy pronto/i })).toBeInTheDocument();
 });
 
-test('emprendedor card goes to the product landing', async () => {
+test('available product cards open the app lobby directly', () => {
   window.history.pushState({}, '', '/');
   render(<App />);
 
-  const link = screen.getAllByRole('link', { name: /emprendedor/i })[0];
-  expect(link).toHaveAttribute('href', '/productos/emprendedor');
+  const enviosLink = screen.getAllByRole('link', { name: /conocer producto/i })[0];
+  expect(enviosLink).toHaveAttribute('href', 'https://envios.zemyx.com');
+  expect(enviosLink).toHaveAttribute('target', '_blank');
 
-  await userEvent.click(link);
-  expect(
-    await screen.findByRole('heading', { name: /tu negocio, en un solo lugar/i })
-  ).toBeInTheDocument();
-  const trialLinks = screen.getAllByRole('link', { name: /reclama tu prueba gratis/i });
-  expect(trialLinks.length).toBeGreaterThan(0);
-  expect(trialLinks[0]).toHaveAttribute('href', 'https://emprendedor.zemyx.com');
-  expect(trialLinks[0]).toHaveAttribute('target', '_blank');
+  const emprendedorLink = screen.getAllByRole('link', { name: /conocer producto/i })[1];
+  expect(emprendedorLink).toHaveAttribute('href', 'https://emprendedor.zemyx.com');
+  expect(emprendedorLink).toHaveAttribute('target', '_blank');
 });
 
 test('whatsapp button uses the official contact link', () => {

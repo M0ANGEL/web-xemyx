@@ -1,0 +1,206 @@
+.stage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-lg) - 0.25rem);
+  background: var(--color-bg);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 80%, var(--color-bg));
+}
+
+.dots {
+  display: inline-flex;
+  gap: 0.28rem;
+}
+
+.dots i {
+  display: block;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--color-border-strong);
+}
+
+.url {
+  font-size: 0.62rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+}
+
+.shell {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.65rem;
+  min-height: 11.5rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-black);
+  color: var(--color-chrome-text);
+  font-size: 0.58rem;
+  font-weight: var(--weight-semibold);
+}
+
+.navProduct {
+  color: var(--color-primary);
+}
+
+.route {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.2rem;
+}
+
+.point {
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+}
+
+.pin {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.pinDone {
+  background: var(--color-primary);
+}
+
+.pointLabel {
+  font-size: 0.48rem;
+  color: var(--color-text-muted);
+}
+
+.road {
+  position: relative;
+  height: 0.35rem;
+}
+
+.lane {
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-primary) 18%, transparent),
+    var(--color-primary),
+    color-mix(in srgb, var(--color-primary) 18%, transparent)
+  );
+  transform: translateY(-50%);
+}
+
+.package {
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  display: grid;
+  place-items: center;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 0.2rem;
+  background: var(--color-primary);
+  transform: translateY(-50%);
+}
+
+.package i {
+  display: block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0.12rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .package {
+    animation: zxEnvMove 5s var(--ease) infinite alternate;
+  }
+}
+
+@keyframes zxEnvMove {
+  from {
+    left: 16%;
+  }
+
+  to {
+    left: 72%;
+  }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.badgeRoute,
+.badgeDone {
+  padding: 0.18rem 0.42rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.52rem;
+  font-weight: var(--weight-semibold);
+}
+
+.badgeRoute {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.badgeDone {
+  color: var(--color-success);
+  background: color-mix(in srgb, var(--color-success) 12%, transparent);
+}
+
+.rows {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.38rem 0.45rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-card);
+  font-size: 0.56rem;
+  font-weight: var(--weight-medium);
+}
+
+.statusRoute {
+  color: var(--color-primary);
+  font-size: 0.52rem;
+  font-weight: var(--weight-semibold);
+}
+
+.statusDone {
+  color: var(--color-success);
+  font-size: 0.52rem;
+  font-weight: var(--weight-semibold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .package {
+    animation: none;
+    left: 44%;
+  }
+}

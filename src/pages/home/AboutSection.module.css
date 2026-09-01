@@ -1,0 +1,41 @@
+.about {
+  scroll-margin-top: var(--nav-height);
+}
+
+.block {
+  padding-block: var(--space-section);
+}
+
+.surface {
+  background: var(--color-surface);
+}
+
+.philosophy {
+  max-width: 40rem;
+  margin-bottom: var(--space-16);
+}
+
+.philosophyEyebrow {
+  margin-bottom: var(--space-5);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.quote {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.05;
+}
+
+.philosophyNote {
+  max-width: 28rem;
+  margin-top: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}

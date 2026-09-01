@@ -3,7 +3,7 @@
 }
 
 .muted {
-  background: color-mix(in srgb, var(--color-black) 3%, var(--color-light));
+  background: var(--color-surface);
 }
 
 .surface {

@@ -1,0 +1,96 @@
+.hero {
+  max-width: 42rem;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-10);
+}
+
+.card {
+  padding: var(--space-8) var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-card);
+  box-shadow: var(--shadow-card);
+}
+
+.card h3 {
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-lg);
+  letter-spacing: var(--tracking-tight);
+}
+
+.card p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-body);
+}
+
+.steps {
+  display: grid;
+  gap: var(--space-8);
+  margin-top: var(--space-10);
+  counter-reset: about-step;
+}
+
+.step {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 34rem;
+  counter-increment: about-step;
+}
+
+.step h3::before {
+  content: counter(about-step, decimal-leading-zero);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: var(--space-3);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-bold);
+  vertical-align: middle;
+}
+
+.step p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.closing {
+  max-width: 40rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+
+  .step {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroWide {
+    max-width: 52rem;
+  }
+}

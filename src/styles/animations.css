@@ -1,0 +1,104 @@
+@keyframes zxGlow {
+  from {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes zxBarGrow {
+  from {
+    transform: scaleY(0.82);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes zxBadgeSwap {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes zxBadgeSwapDone {
+  0%,
+  45% {
+    opacity: 0.4;
+  }
+  55%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zxDotPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes zxLineShimmer {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zxTilePop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes zxCtaShine {
+  0%,
+  70% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes zxNodeLift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroGlow,
+  .ctaShine,
+  .motifAnimated .bubbleIn,
+  .motifAnimated .bubbleOut,
+  .motifAnimated .routeDot,
+  .motifAnimated .bar,
+  .motifAnimated .line,
+  .motifAnimated .tile {
+    animation: none !important;
+  }
+}

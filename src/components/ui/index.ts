@@ -1,6 +1,7 @@
 export { Button } from './Button';
 export { Card } from './Card';
 export { Container } from './Container';
+export { FaqAccordion } from './FaqAccordion';
 export { Heading } from './Heading';
 export { ProductCard } from './ProductCard';
 export { ProductIcon } from './ProductIcon';

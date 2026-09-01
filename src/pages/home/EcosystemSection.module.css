@@ -58,11 +58,18 @@
   color: inherit;
   font: inherit;
   cursor: pointer;
-  transition: border-color var(--duration) var(--ease);
+  transition:
+    border-color var(--duration) var(--ease),
+    transform var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease);
 }
 
-.node:hover {
-  border-color: var(--color-primary);
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .node:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 24px color-mix(in srgb, var(--color-primary) 8%, transparent);
+  }
 }
 
 .node:focus-visible {

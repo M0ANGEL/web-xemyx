@@ -1,9 +1,8 @@
 import { site } from '../data/site';
 import { usePageTitle } from '../hooks/usePageTitle';
-import { CtaSection } from './home/CtaSection';
-import { EcosystemSection } from './home/EcosystemSection';
+import { AboutSection } from './home/AboutSection';
+import { ContactSection } from './home/ContactSection';
 import { Hero } from './home/Hero';
-import { PhilosophySection } from './home/PhilosophySection';
 import { ProductsSection } from './home/ProductsSection';
 
 export function HomePage() {
@@ -17,9 +16,8 @@ export function HomePage() {
     <>
       <Hero />
       <ProductsSection />
-      <EcosystemSection />
-      <PhilosophySection />
-      <CtaSection />
+      <AboutSection />
+      <ContactSection />
     </>
   );
 }

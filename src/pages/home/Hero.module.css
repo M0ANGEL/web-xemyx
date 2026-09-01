@@ -2,6 +2,21 @@
   position: relative;
   overflow: hidden;
   padding-block: clamp(3rem, 8vw, 6.5rem) clamp(4rem, 10vw, 7.5rem);
+  isolation: isolate;
+  scroll-margin-top: var(--nav-height);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -20% -10% auto;
+  height: 70%;
+  background:
+    radial-gradient(circle at 18% 30%, color-mix(in srgb, var(--color-primary) 8%, transparent), transparent 42%),
+    radial-gradient(circle at 82% 12%, color-mix(in srgb, var(--color-secondary) 6%, transparent), transparent 38%);
+  pointer-events: none;
+  z-index: -1;
+  animation: zxGlow 8s var(--ease) infinite alternate;
 }
 
 .grid {
@@ -21,12 +36,12 @@
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-text-tertiary);
 }
 
 .title {
   font-size: var(--font-size-display);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-extrabold);
   letter-spacing: var(--tracking-tight);
   line-height: 0.98;
 }
@@ -61,6 +76,10 @@
 
 .visual {
   min-height: 18rem;
+}
+
+[data-theme='dark'] .hero {
+  background: var(--color-black);
 }
 
 @media (min-width: 1024px) {

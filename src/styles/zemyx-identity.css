@@ -1,0 +1,125 @@
+/**
+ * Identidad visual Zemyx — tokens oficiales.
+ * Alcance: web-zemyx, lobby público Envíos/Emprendedor, auth público.
+ * No extender automáticamente al interior de /app.
+ */
+:root,
+.lobby,
+.lobby-skin,
+.lobby-auth-shell {
+  --color-primary: #2463eb;
+  --color-secondary: #7c3aed;
+  --color-accent: #f59e0b;
+  --color-success: #10b981;
+  --color-black: #000000;
+
+  --color-bg: #ffffff;
+  --color-light: #ffffff;
+  --color-surface: #f9fafb;
+  --color-card: #ffffff;
+  --color-surface-input: #f3f4f6;
+  --color-text: #000000;
+  --color-text-muted: #4b5563;
+  --color-text-tertiary: #9ca3af;
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+
+  --color-primary-hover: #1d4ed8;
+  --color-primary-soft: color-mix(in srgb, var(--color-primary) 10%, #fff);
+  --color-secondary-soft: color-mix(in srgb, var(--color-secondary) 10%, #fff);
+  --color-ink: #000000;
+  --color-on-ink: #ffffff;
+  --color-inverse: #000000;
+  --color-on-inverse: #ffffff;
+
+  --color-chrome-bg: #000000;
+  --color-chrome-text: #ffffff;
+  --color-chrome-text-muted: #a3a3a3;
+  --color-chrome-border: #2e2e2e;
+  --color-glass: rgba(255, 255, 255, 0.72);
+  --color-glass-border: rgba(255, 255, 255, 0.12);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.9375rem;
+  --font-size-md: 1.0625rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.75rem;
+  --font-size-2xl: 2.5rem;
+  --font-size-3xl: clamp(2.75rem, 6vw, 4.25rem);
+  --font-size-display: clamp(3rem, 8vw, 5.25rem);
+  --line-tight: 1.15;
+  --line-body: 1.65;
+  --tracking-tight: -0.035em;
+  --tracking-wide: 0.06em;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  --shadow-soft: 0 1px 0 rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.05), 0 8px 24px rgba(0, 0, 0, 0.05);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 200ms;
+  --duration-slow: 320ms;
+  --color-scheme: light;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-section: clamp(4.5rem, 10vw, 7.5rem);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+  --max-width: 72rem;
+  --nav-height: 4.5rem;
+}
+
+[data-theme='dark'],
+[data-theme='dark'] .lobby,
+[data-theme='dark'] .lobby-skin,
+[data-theme='dark'] .lobby-auth-shell {
+  --color-primary: #4b7fff;
+  --color-primary-hover: #2563eb;
+  --color-secondary: #a78bfa;
+  --color-accent: #fbbf24;
+
+  --color-bg: #0a0a0a;
+  --color-light: #0a0a0a;
+  --color-surface: #0a0a0a;
+  --color-card: #1a1a1a;
+  --color-surface-input: #2a2a2a;
+  --color-text: #ffffff;
+  --color-text-muted: #a3a3a3;
+  --color-text-tertiary: #6b7280;
+  --color-border: #2e2e2e;
+  --color-border-strong: #3a3a3a;
+
+  --color-primary-soft: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  --color-secondary-soft: color-mix(in srgb, var(--color-secondary) 18%, transparent);
+  --color-ink: #ffffff;
+  --color-on-ink: #000000;
+  --color-inverse: #000000;
+  --color-on-inverse: #ffffff;
+
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+
+  --shadow-soft: 0 1px 0 rgba(255, 255, 255, 0.06);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.7);
+  --shadow-elevated: 0 16px 48px rgba(0, 0, 0, 0.7);
+  --color-scheme: dark;
+}

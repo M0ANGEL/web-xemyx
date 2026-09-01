@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Container, Heading, ProductIcon, Section } from '../../components/ui';
 import { Reveal } from '../../components/motion/Reveal';
@@ -51,9 +50,11 @@ export function EcosystemSection() {
                 transition={fadeUpTransition(0.1 + index * 0.08)}
               >
                 {product.available ? (
-                  <Link
-                    to={`/productos/${product.slug}`}
+                  <a
+                    href={product.url}
                     className={`${styles.node} ${styles[product.tone]}`}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <span className={styles.nodeIcon}>
                       <ProductIcon id={product.icon} />
@@ -62,7 +63,7 @@ export function EcosystemSection() {
                       <strong>{product.name}</strong>
                       <small>{product.host}</small>
                     </span>
-                  </Link>
+                  </a>
                 ) : (
                   <button
                     type="button"

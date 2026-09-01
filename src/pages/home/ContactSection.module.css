@@ -1,12 +1,13 @@
-.cta {
+.contact {
   position: relative;
   overflow: hidden;
   padding-block: var(--space-section);
+  scroll-margin-top: var(--nav-height);
   background: var(--color-inverse);
   color: var(--color-on-inverse);
 }
 
-.cta::before {
+.contact::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -31,7 +32,7 @@
 }
 
 .title {
-  max-width: 10ch;
+  max-width: 12ch;
   font-size: clamp(2.6rem, 7vw, 5rem);
   font-weight: var(--weight-bold);
   letter-spacing: var(--tracking-tight);
@@ -39,11 +40,31 @@
 }
 
 .text {
-  max-width: 28rem;
+  max-width: 32rem;
   margin-top: var(--space-6);
   color: color-mix(in srgb, var(--color-on-inverse) 68%, transparent);
+  line-height: var(--line-body);
+}
+
+.email {
+  margin-top: var(--space-4);
+  font-size: var(--font-size-md);
+  font-weight: var(--weight-semibold);
+  color: color-mix(in srgb, var(--color-on-inverse) 82%, transparent);
 }
 
 .action {
   margin-top: var(--space-8);
+}
+
+@media (max-width: 479px) {
+  .action a {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact::before {
+    animation: none;
+  }
 }

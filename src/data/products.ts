@@ -1,4 +1,4 @@
-export type ProductIconId = 'message' | 'wallet' | 'menu' | 'store';
+export type ProductIconId = 'wallet' | 'menu' | 'store' | 'package';
 export type ProductTone = 'primary' | 'accent' | 'ink' | 'soft';
 
 export type Product = {
@@ -14,14 +14,14 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    slug: 'mensajeria',
-    name: 'Mensajería',
-    description: 'Comunicación digital simple y directa.',
-    host: 'mensajeria.zemyx.com',
-    url: 'https://mensajeria.zemyx.com',
-    icon: 'message',
+    slug: 'envios',
+    name: 'Envíos',
+    description: 'Operación de mensajería para empresas y equipos.',
+    host: 'envios.zemyx.com',
+    url: 'https://envios.zemyx.com',
+    icon: 'package',
     tone: 'primary',
-    available: false,
+    available: true,
   },
   {
     slug: 'finanzas',

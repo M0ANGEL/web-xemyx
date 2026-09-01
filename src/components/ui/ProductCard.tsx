@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useComingSoon } from '../../context/ComingSoonContext';
 import type { Product } from '../../data/products';
@@ -52,9 +51,9 @@ export function ProductCard({ product, delay = 0 }: ProductCardProps) {
       transition={{ duration: 0.45, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {product.available ? (
-        <Link to={`/productos/${product.slug}`} className={cardClass}>
+        <a href={product.url} className={cardClass} target="_blank" rel="noreferrer">
           {content}
-        </Link>
+        </a>
       ) : (
         <button type="button" className={cardClass} onClick={() => openComingSoon(product.name)}>
           {content}

@@ -1,4 +1,5 @@
 @import './tokens.css';
+@import './animations.css';
 
 *,
 *::before,
@@ -12,6 +13,10 @@ html {
   color-scheme: var(--color-scheme);
   background: var(--color-bg);
   transition: background-color 220ms var(--ease), color 220ms var(--ease);
+}
+
+[id] {
+  scroll-margin-top: var(--nav-height);
 }
 
 body {

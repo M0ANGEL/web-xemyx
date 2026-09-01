@@ -1,6 +1,7 @@
 .footer {
-  border-top: 1px solid var(--color-border);
-  background: var(--color-surface);
+  border-top: 1px solid var(--color-chrome-border);
+  background: var(--color-chrome-bg);
+  color: var(--color-chrome-text-muted);
   padding-block: var(--space-16) var(--space-10);
 }
 
@@ -13,10 +14,11 @@
   display: grid;
   gap: var(--space-4);
   max-width: 18rem;
+  color: var(--color-chrome-text);
 }
 
 .description {
-  color: var(--color-text-muted);
+  color: var(--color-chrome-text-muted);
   font-size: var(--font-size-sm);
 }
 
@@ -31,7 +33,7 @@
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-chrome-text-muted);
 }
 
 .links {
@@ -45,7 +47,7 @@
   border: 0;
   background: none;
   font-size: var(--font-size-sm);
-  color: var(--color-text);
+  color: color-mix(in srgb, var(--color-chrome-text) 88%, transparent);
   cursor: pointer;
   text-align: left;
   transition: color var(--duration) var(--ease);
@@ -65,8 +67,8 @@
 .bottom {
   margin-top: var(--space-12);
   padding-top: var(--space-6);
-  border-top: 1px solid var(--color-border);
-  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-chrome-border);
+  color: var(--color-chrome-text-muted);
   font-size: var(--font-size-xs);
 }
 

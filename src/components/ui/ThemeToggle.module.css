@@ -5,19 +5,18 @@
   width: 2.5rem;
   height: 2.5rem;
   padding: 0;
-  border: 1px solid var(--color-border);
+  border: 0;
   border-radius: var(--radius-sm);
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: transparent;
+  color: var(--color-chrome-text);
   cursor: pointer;
   transition:
     background-color var(--duration) var(--ease),
-    border-color var(--duration) var(--ease),
     color var(--duration) var(--ease);
 }
 
 .toggle:hover {
-  border-color: var(--color-border-strong);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .toggle:focus-visible {

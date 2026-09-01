@@ -21,6 +21,7 @@ type ButtonAsButton = SharedProps &
 type ButtonAsLink = SharedProps & {
   to: string;
   href?: undefined;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 };
 
 type ButtonAsAnchor = SharedProps &
@@ -56,17 +57,18 @@ export function Button(props: ButtonProps) {
   const content = <Content withArrow={withArrow}>{children}</Content>;
 
   if ('to' in props && props.to) {
+    const { onClick } = props;
     return (
-      <Link to={props.to} className={classes}>
+      <Link to={props.to} className={classes} onClick={onClick}>
         {content}
       </Link>
     );
   }
 
   if ('href' in props && props.href) {
-    const { href, target, rel } = props;
+    const { href, target, rel, onClick } = props;
     return (
-      <a href={href} target={target} rel={rel} className={classes}>
+      <a href={href} target={target} rel={rel} className={classes} onClick={onClick}>
         {content}
       </a>
     );

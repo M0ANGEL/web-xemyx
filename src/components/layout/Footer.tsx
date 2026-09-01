@@ -7,10 +7,10 @@ import { site } from '../../data/site';
 import styles from './Footer.module.css';
 
 const companyLinks = [
-  { to: '/', label: 'Inicio' },
-  { to: '/productos', label: 'Productos' },
-  { to: '/nosotros', label: 'Nosotros' },
-  { to: '/contacto', label: 'Contacto' },
+  { to: '/#inicio', label: 'Inicio' },
+  { to: '/#productos', label: 'Productos' },
+  { to: '/#nosotros', label: 'Nosotros' },
+  { to: '/#contacto', label: 'Contacto' },
 ];
 
 export function Footer() {
@@ -42,7 +42,9 @@ export function Footer() {
               {products.map((product) => (
                 <li key={product.slug}>
                   {product.available ? (
-                    <Link to={`/productos/${product.slug}`}>{product.name}</Link>
+                    <a href={product.url} target="_blank" rel="noreferrer">
+                      {product.name}
+                    </a>
                   ) : (
                     <button type="button" onClick={() => openComingSoon(product.name)}>
                       {product.name}
