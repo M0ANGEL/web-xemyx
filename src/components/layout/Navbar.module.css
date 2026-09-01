@@ -113,10 +113,15 @@
   width: 2.5rem;
   height: 2.5rem;
   padding: 0;
-  border: 1px solid var(--color-chrome-border);
+  border: 0;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   cursor: pointer;
+  transition: background-color var(--duration) var(--ease);
+}
+
+.toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .toggle:focus-visible {
@@ -169,21 +174,18 @@
 
 .mobilePanel {
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.62);
+  background: transparent;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
 
 :global([data-theme='dark']) .mobilePanel {
-  background: rgba(255, 255, 255, 0.05);
   border-top-color: rgba(255, 255, 255, 0.06);
 }
 
 .mobileNav {
   display: grid;
   gap: var(--space-2);
-  padding-bottom: var(--space-6);
+  padding-block: var(--space-2) var(--space-6);
 }
 
 .mobileLink {
@@ -226,10 +228,6 @@
   }
 
   .scrolled {
-    background: var(--color-chrome-bg);
-  }
-
-  .mobilePanel {
     background: var(--color-chrome-bg);
   }
 }
