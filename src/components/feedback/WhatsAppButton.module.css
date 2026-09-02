@@ -1,17 +1,22 @@
-.fab {
+.stack {
   position: fixed;
   right: max(1.5rem, env(safe-area-inset-right));
   bottom: max(1.5rem, env(safe-area-inset-bottom));
   z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fab {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: var(--color-primary);
   color: #fff;
-  box-shadow: 0 10px 24px color-mix(in srgb, var(--color-primary) 28%, transparent);
   transition: transform var(--duration) var(--ease), background-color var(--duration) var(--ease);
 }
 
@@ -20,13 +25,35 @@
   height: 1.45rem;
 }
 
-.fab:hover {
+.mail {
+  background: var(--color-primary);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--color-primary) 28%, transparent);
+}
+
+.mail:hover {
   background: var(--color-primary-hover);
   transform: translateY(-2px);
 }
 
-.fab:focus-visible {
+.mail:focus-visible {
   outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.whatsapp {
+  --whatsapp: #25d366;
+  --whatsapp-hover: #1ebe57;
+  background: var(--whatsapp);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--whatsapp) 36%, transparent);
+}
+
+.whatsapp:hover {
+  background: var(--whatsapp-hover);
+  transform: translateY(-2px);
+}
+
+.whatsapp:focus-visible {
+  outline: 2px solid var(--whatsapp);
   outline-offset: 4px;
 }
 

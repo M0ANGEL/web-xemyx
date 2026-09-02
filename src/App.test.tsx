@@ -78,3 +78,13 @@ test('whatsapp button uses the official contact link', () => {
     site.whatsappUrl
   );
 });
+
+test('mail button opens the Zemyx inbox', () => {
+  window.history.pushState({}, '', '/');
+  render(<App />);
+
+  expect(screen.getByRole('link', { name: /escribir a zemyx por correo/i })).toHaveAttribute(
+    'href',
+    site.mailto
+  );
+});
