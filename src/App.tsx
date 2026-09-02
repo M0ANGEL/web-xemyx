@@ -7,12 +7,7 @@ import { ThemeProvider } from './theme/ThemeContext';
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+      <BrowserRouter>
         <ComingSoonProvider>
           <AppRoutes />
           <WhatsAppButton />
