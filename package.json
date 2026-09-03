@@ -60,8 +60,6 @@
     "uuid": "11.1.1",
     "svgo": "2.8.4",
     "@tootallnate/once": "2.0.1",
-    "ajv": "6.15.0",
-    "yaml": "1.10.3",
-    "json-schema-traverse": "0.4.1"
+    "yaml": "1.10.3"
   }
 }
