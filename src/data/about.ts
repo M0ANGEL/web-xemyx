@@ -51,5 +51,5 @@ export const aboutApproach = {
 
 export const aboutClosing = {
   title: 'Un ecosistema, muchas soluciones',
-  text: 'Bajo la marca Zemyx conviven productos distintos — como Envíos y Emprendedor — que comparten criterios de calidad, pero mantienen autonomía. Así construimos software que se adapta a mundos diferentes sin diluirse.',
+  text: 'Bajo la marca Zemyx conviven productos distintos — como Envíos, Emprendedor y Finanzas Personales — que comparten criterios de calidad, pero mantienen autonomía. Así construimos software que se adapta a mundos diferentes sin diluirse.',
 } as const;

@@ -31,7 +31,7 @@ export const products: Product[] = [
     url: 'https://finanzas.zemyx.com',
     icon: 'wallet',
     tone: 'accent',
-    available: false,
+    available: true,
   },
   {
     slug: 'menu',

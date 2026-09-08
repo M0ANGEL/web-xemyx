@@ -1,4 +1,4 @@
-import './jest-polyfills';
+import './jest-polyfills.js';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
@@ -30,44 +30,39 @@ test('renders the Zemyx home experience', () => {
     'href',
     'mailto:hola@zemyx.com'
   );
-  expect(screen.getByText(/creamos sistemas para cada problema/i)).toBeInTheDocument();
+  expect(screen.getByText(/creamos sistemas para cada problema/i )).toBeInTheDocument();
   expect(screen.getByText(/¿tienes una idea\?/i)).toBeInTheDocument();
 });
 
-test('unavailable products open the coming soon dialog', async () => {
+test('menu still opens the coming soon dialog', async () => {
   window.history.pushState({}, '', '/');
   render(<App />);
 
-  await userEvent.click(screen.getAllByRole('button', { name: /finanzas personales/i })[0]);
+  await userEvent.click(screen.getByRole('button', { name: /menús digitales para restaurantes/i }));
 
   const dialog = screen.getByRole('dialog');
   expect(within(dialog).getByRole('heading', { name: /muy pronto/i })).toBeInTheDocument();
-  expect(within(dialog).getByText('Finanzas Personales')).toBeInTheDocument();
-});
-
-test('finanzas personales and menu also open coming soon', async () => {
-  window.history.pushState({}, '', '/');
-  render(<App />);
-
-  await userEvent.click(screen.getAllByRole('button', { name: /finanzas personales/i })[0]);
-  expect(within(screen.getByRole('dialog')).getByText('Finanzas Personales')).toBeInTheDocument();
-
-  await userEvent.click(screen.getByRole('button', { name: /entendido/i }));
-  await userEvent.click(screen.getAllByRole('button', { name: /menú/i })[0]);
-  expect(screen.getByRole('heading', { name: /muy pronto/i })).toBeInTheDocument();
+  expect(within(dialog).getByText('Menú')).toBeInTheDocument();
 });
 
 test('available product cards open the app lobby directly', () => {
   window.history.pushState({}, '', '/');
   render(<App />);
 
-  const enviosLink = screen.getAllByRole('link', { name: /conocer producto/i })[0];
-  expect(enviosLink).toHaveAttribute('href', 'https://envios.zemyx.com');
-  expect(enviosLink).toHaveAttribute('target', '_blank');
+  const productLinks = screen.getAllByRole('link', { name: /conocer producto/i });
+  const hrefs = productLinks.map((link) => link.getAttribute('href'));
 
-  const emprendedorLink = screen.getAllByRole('link', { name: /conocer producto/i })[1];
-  expect(emprendedorLink).toHaveAttribute('href', 'https://emprendedor.zemyx.com');
-  expect(emprendedorLink).toHaveAttribute('target', '_blank');
+  expect(hrefs).toEqual(
+    expect.arrayContaining([
+      'https://envios.zemyx.com',
+      'https://finanzas.zemyx.com',
+      'https://emprendedor.zemyx.com',
+    ])
+  );
+
+  productLinks.forEach((link) => {
+    expect(link).toHaveAttribute('target', '_blank');
+  });
 });
 
 test('whatsapp button uses the official contact link', () => {

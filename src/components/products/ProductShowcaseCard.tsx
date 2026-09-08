@@ -3,6 +3,7 @@ import type { Product } from '../../data/products';
 import { ProductIcon } from '../ui/ProductIcon';
 import { EmprendedorPreview } from './EmprendedorPreview';
 import { EnviosPreview } from './EnviosPreview';
+import { FinanzasPreview } from './FinanzasPreview';
 import styles from './ProductShowcaseCard.module.css';
 
 type ProductShowcaseCardProps = {
@@ -17,6 +18,10 @@ function ProductPreview({ slug }: { slug: string }) {
 
   if (slug === 'envios') {
     return <EnviosPreview />;
+  }
+
+  if (slug === 'finanzas') {
+    return <FinanzasPreview />;
   }
 
   return null;

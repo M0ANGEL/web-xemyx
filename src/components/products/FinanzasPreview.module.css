@@ -1,0 +1,198 @@
+.stage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-lg) - 0.25rem);
+  background: var(--color-bg);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 80%, var(--color-bg));
+}
+
+.dots {
+  display: inline-flex;
+  gap: 0.28rem;
+}
+
+.dots i {
+  display: block;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--color-border-strong);
+}
+
+.url {
+  font-size: 0.62rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+}
+
+.shell {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0.65rem;
+  min-height: 11.5rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-black);
+  color: var(--color-chrome-text);
+  font-size: 0.58rem;
+  font-weight: var(--weight-semibold);
+}
+
+.navBrand {
+  opacity: 0.92;
+}
+
+.navProduct {
+  color: var(--color-accent);
+}
+
+.hero {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.2rem 0.1rem;
+}
+
+.heroLine,
+.heroLineShort {
+  display: block;
+  height: 0.45rem;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--color-text) 12%, transparent);
+}
+
+.heroLine {
+  width: 72%;
+}
+
+.heroLineShort {
+  width: 48%;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.metric {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.45rem 0.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-card);
+}
+
+.metricLabel {
+  font-size: 0.52rem;
+  color: var(--color-text-muted);
+}
+
+.metricValue {
+  font-size: 0.68rem;
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.metricValuePrimary {
+  color: var(--color-accent);
+}
+
+.metricValueGood {
+  color: color-mix(in srgb, #34c759 85%, var(--color-text));
+}
+
+.bars {
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-card);
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.barLabel {
+  font-size: 0.5rem;
+  color: var(--color-text-muted);
+}
+
+.track {
+  display: block;
+  height: 0.38rem;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+  overflow: hidden;
+}
+
+.track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transform-origin: left center;
+}
+
+.fillNeeds {
+  background: var(--color-accent);
+}
+
+.fillWants {
+  background: color-mix(in srgb, var(--color-primary) 70%, transparent);
+}
+
+.fillSave {
+  background: color-mix(in srgb, #34c759 80%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .track i {
+    animation: zxFinFill 3.8s var(--ease) infinite alternate;
+  }
+
+  .barRow:nth-child(2) .track i {
+    animation-delay: 0.35s;
+  }
+
+  .barRow:nth-child(3) .track i {
+    animation-delay: 0.7s;
+  }
+}
+
+@keyframes zxFinFill {
+  from {
+    transform: scaleX(0.82);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track i {
+    animation: none;
+  }
+}

@@ -12,7 +12,7 @@ export const homeFaq: FaqItem[] = [
   {
     pregunta: '¿Zemyx es una sola aplicación?',
     respuesta:
-      'No. Zemyx agrupa varios productos independientes —como Envíos y Emprendedor— cada uno con su propia plataforma y URL.',
+      'No. Zemyx agrupa varios productos independientes —como Envíos, Emprendedor y Finanzas Personales— cada uno con su propia plataforma y URL.',
   },
   {
     pregunta: '¿Los productos disponibles tienen prueba gratis?',
@@ -40,12 +40,12 @@ export const productsFaq: FaqItem[] = [
   {
     pregunta: '¿Cuáles productos ya están disponibles?',
     respuesta:
-      'Envíos y Emprendedor están disponibles. Finanzas Personales y Menú se encuentran en desarrollo y se anunciarán cuando estén listos.',
+      'Envíos, Emprendedor y Finanzas Personales están disponibles. Menú se encuentra en desarrollo y se anunciará cuando esté listo.',
   },
   {
     pregunta: '¿Dónde accedo a cada producto?',
     respuesta:
-      'Cada producto vive en su propio subdominio: envios.zemyx.com, emprendedor.zemyx.com, y así sucesivamente. Desde aquí puedes ir directo al lobby de cada uno.',
+      'Cada producto vive en su propio subdominio: envios.zemyx.com, emprendedor.zemyx.com, finanzas.zemyx.com, y así sucesivamente. Desde aquí puedes ir directo al lobby de cada uno.',
   },
   {
     pregunta: '¿Qué pasa si un producto dice "Próximamente"?',
